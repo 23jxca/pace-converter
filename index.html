@@ -48,7 +48,11 @@
                 let milePaceMinutes = Math.floor(mileSeconds/60)
                 let milePaceSeconds = mileSeconds%60
 
-                document.getElementById("result").innerHTML = milePaceMinutes + ":" + milePaceSeconds
+                if(milePaceSeconds<10){
+                    document.getElementById("result").innerHTML = milePaceMinutes + ":0" + milePaceSeconds
+                }else{
+                    document.getElementById("result").innerHTML = milePaceMinutes + ":" + milePaceSeconds
+                }
 
             })
 
