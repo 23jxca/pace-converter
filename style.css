@@ -1,6 +1,7 @@
 body{
     font-family: 'Courier New', Courier, monospace;
     display: flex;
+    flex-wrap: wrap;
 }
 input[type="number"]{
     font-family: 'Courier New', Courier, monospace;
@@ -11,7 +12,14 @@ input[type="button"]{
 }
 main{
     width: 100%;
-    height: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    height: 30%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
