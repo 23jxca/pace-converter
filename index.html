@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Pace calculator</title>
+
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+
+        <main>
+
+            <form>
+                
+                <input type="number" id="min" min="1" placeholder="min" required>
+
+                :
+
+                <input type="number" id="sec" min="1" max="59" placeholder="sec" required>
+
+                <input type="button" id="button" value="Convert">
+
+            </form>
+
+            <p id="result"></p>
+
+        </main>
+
+        <script>
+
+            document.getElementById("button").addEventListener('click',function(){
+
+                if (!document.getElementById("sec") || document.getElementById("sec").value === "") {
+                    document.getElementById("sec").value = 0;
+                }
+                if(document.getElementById("sec").value>59){
+                    document.getElementById("sec").value = 59
+                }
+
+                let seconds = (parseInt(document.getElementById("min").value) * 60) + parseInt(document.getElementById("sec").value)
+                let mileSeconds = Math.round(seconds * 1.609344)
+                let milePaceMinutes = Math.floor(mileSeconds/60)
+                let milePaceSeconds = mileSeconds%60
+
+                document.getElementById("result").innerHTML = milePaceMinutes + ":" + milePaceSeconds
+
+            })
+
+        </script>
+        
+    </body>
+
+</html>
