@@ -48,4 +48,8 @@ header{
         padding: 10px;
         margin: 5px;
     }
+    header{
+        width: 100%;
+        font-size: 30px;
+    }
 }
